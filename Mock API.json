@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "545066e7-71fe-41cb-8f80-6d5f56ce0249",
+		"name": "ExBanking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23637467"
+	},
+	"item": [
+		{
+			"name": "createuser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Frank\",\n    \"LastName\": \"Udonga\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/createuser",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"createuser"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Frank\",\n    \"LastName\": \"Udonga\"\n}"
+						},
+						"url": {
+							"raw": "https://5648b3b7-6b9e-4a72-ad1a-39d298bebce2.mock.pstmn.io/createuser",
+							"protocol": "https",
+							"host": [
+								"5648b3b7-6b9e-4a72-ad1a-39d298bebce2",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"createuser"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"firstName\": \"Frank\",\n    \"LastName\": \"Udonga\",\n    \"userId\": 9037,\n    \"accountNumber\": \"FI908353789404\"\n}"
+				}
+			]
+		},
+		{
+			"name": "deposite",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 400,\n    \"userId\": 9037,\n    \"accountNumber\": \"FI908353789404\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/deposite",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"deposite"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 400,\n    \"userId\": 9037,\n    \"accountNumber\": \"FI908353789404\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/deposite",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"deposite"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\": \"Deposite of 400 is successful\"\n}"
+				}
+			]
+		},
+		{
+			"name": "withdraw",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 9037,\n    \"amount\": \"400\",\n    \"accountNumber\": \"FI908353789404\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/withdraw",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"withdraw"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 9037,\n    \"amount\": \"400\",\n    \"accountNumber\": \"FI908353789404\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/withdraw",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"withdraw"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\": \"400 Euros has been withdrawed successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "balance",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/balance",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"balance"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/balance",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"balance"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"message\": \"Your account balance is 2000 euros\"\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://5648b3b7-6b9e-4a72-ad1a-39d298bebce2.mock.pstmn.io"
+		}
+	]
+}
